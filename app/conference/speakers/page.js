@@ -17,9 +17,7 @@ export default async function Page() {
 
   return (
     <div className={styles.parentContainer}>
-      <div className='self-start whitespace-nowrap rounded-lg bg-gray-700 px-3 py-1 text-sm font-medium tabular-nums text-gray-100'>
-        Last Rendered: {new Date().toLocaleTimeString()}
-      </div>
+      <div>Last Rendered: {new Date().toLocaleTimeString()}</div>
       <h1>Welcome to Globomantics Speakers</h1>
       {data.speakers.map(({ id, name, bio }) => (
         <div key={id} className={styles.infoContainer}>

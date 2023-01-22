@@ -1,6 +1,8 @@
 import styles from '../conference.module.css'
 import Link from 'next/link'
 
+export let speakerJson = {}
+
 // Static site generation by default
 // Static data fetching with revalidation
 async function fetchSpeakers() {
@@ -10,6 +12,7 @@ async function fetchSpeakers() {
   )
 
   const data = await response.json()
+  speakerJson = data
   return data
 }
 

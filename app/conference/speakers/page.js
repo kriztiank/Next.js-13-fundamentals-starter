@@ -1,4 +1,5 @@
 import styles from '../conference.module.css'
+import Link from 'next/link'
 
 // Static site generation by default
 // Static data fetching with revalidation
@@ -21,7 +22,13 @@ export default async function Page() {
       <h1>Welcome to Globomantics Speakers</h1>
       {data.speakers.map(({ id, name, bio }) => (
         <div key={id} className={styles.infoContainer}>
-          <h3 className={styles.titleText}>{name}</h3>
+          <Link
+            className={styles.bgLinks}
+            href={`/conference/speakers/${name}`}
+          >
+            <h3 className={styles.titleText}>{name}</h3>
+          </Link>
+
           <h5 className={styles.descText}>{bio}</h5>
         </div>
       ))}
